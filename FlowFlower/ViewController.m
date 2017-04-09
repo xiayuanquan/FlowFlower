@@ -23,6 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self FlyFaceImage];
+}
+
+#pragma mark - 鲜花
+-(void)FlyColorImage{
+   
     //#FFBF00 #038AE6 #73D0F5 #D93600 #FFFF00 #63DB59 彩片颜色值
     UIImage *image1 = [UIImage imageWithColor:UIColorFromRGB(0xFFBF00)];
     UIImage *image2 = [UIImage imageWithColor:UIColorFromRGB(0x038AE6)];
@@ -33,6 +39,18 @@
     
     //飞行
     _flowFlower = [FlowFlower flowerFLow:@[image1,image2,image3,image4,image5,image6]];
+    [_flowFlower startFlyFlowerOnView:self.view];
+}
+
+
+#pragma mark - 表情
+-(void)FlyFaceImage{
+    
+    //face
+    UIImage *faceImage = [UIImage imageNamed:@"face.png"];
+    
+    //飞行
+    _flowFlower = [FlowFlower flowerFLow:@[faceImage]];
     [_flowFlower startFlyFlowerOnView:self.view];
 }
 
